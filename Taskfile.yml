@@ -1,0 +1,20 @@
+version: "3"
+
+# Updating Chirpy Theme
+# https://www.richardn.ca/posts/UpdatingChirpy/
+
+tasks:
+  update:
+    desc: Test and Push Changes
+    cmds:
+      - task: test-site
+      - task: gp
+  git-push:
+    desc: git push with changes
+    # git remote add gitlab git@gitlab.com:sakharamgit/cloudutsuk.git
+    # git remote add github git@github.com:SakharamS/sakharams.github.io.git
+    cmds:
+      - git status
+      - git add .
+      - git commit -m "{{.CLI_ARGS}}"
+      - git push origin
